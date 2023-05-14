@@ -1,3 +1,3 @@
 output "vpc_id" {
-  value = aws_vpc.this["wordpress_vpc"].id
+  value = aws_vpc.vpcs["wordpress_vpc"].id
 }

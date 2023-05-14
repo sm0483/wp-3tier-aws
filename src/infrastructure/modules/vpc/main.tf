@@ -1,4 +1,4 @@
-resource "aws_vpc" "this" {
+resource "aws_vpc" "vpcs" {
   for_each             = local.vpcs
   cidr_block           = each.value.cidr_block
   enable_dns_hostnames = each.value.enable_dns_hostnames
