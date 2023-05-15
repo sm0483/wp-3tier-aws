@@ -26,3 +26,15 @@ module "route_module" {
   internet_gateway_id = module.internet_gateway_module.igw_id
 
 }
+
+
+module "security_group_module" {
+  source = "./modules/security-groups"
+  vpc_id = module.vpc_module.vpc_id
+}
+
+module "database_module" {
+  source     = "./modules/database"
+  subnet_ids = module.subnet_module.subnet_ids
+  db_sg_id   = module.security_group_module.db_sg_id
+}
