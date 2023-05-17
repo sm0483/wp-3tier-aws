@@ -31,6 +31,7 @@ module "route_module" {
 module "security_group_module" {
   source = "./modules/security-groups"
   vpc_id = module.vpc_module.vpc_id
+  my_ip  = var.my_ip
 }
 
 module "database_module" {
@@ -38,3 +39,33 @@ module "database_module" {
   subnet_ids = module.subnet_module.subnet_ids
   db_sg_id   = module.security_group_module.db_sg_id
 }
+
+
+module "efs_module" {
+  source     = "./modules/efs"
+  efs_sg_id  = module.security_group_module.efs_sg_id
+  subnet_ids = module.subnet_module.subnet_ids
+}
+
+module "ec2_module" {
+  source = "./modules/ec2"
+
+  efs_sg_id  = module.security_group_module.efs_sg_id
+  ssh_sg_id  = module.security_group_module.ssh_sg_id
+  lb_sg_id   = module.security_group_module.lb_sg_id
+  wb_sg_id   = module.security_group_module.wb_sg_id
+  db_sg_id   = module.security_group_module.db_sg_id
+  subnet_ids = module.subnet_module.subnet_ids
+
+}
+
+
+module "alb_module" {
+  source     = "./modules/load-balancer"
+  vpc_id     = module.vpc_module.vpc_id
+  lb_sg_id   = module.security_group_module.lb_sg_id
+  ec2_ids    = module.ec2_module.ec2_ids
+  subnet_ids = module.subnet_module.subnet_ids
+
+}
+

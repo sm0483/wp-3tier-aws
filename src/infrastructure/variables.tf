@@ -13,3 +13,8 @@ variable "credentials" {
   type    = string
   default = "~/.aws/credentials"
 }
+
+variable "my_ip" {
+  description = "ip address"
+  type        = string
+}
