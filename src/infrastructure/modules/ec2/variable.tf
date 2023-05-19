@@ -35,3 +35,22 @@ variable "ssh_sg_id" {
   type = string
 
 }
+
+variable "wordpress_tg_arn" {
+  type = string
+}
+
+
+variable "efs_dns_name" {
+  type = string
+}
+
+
+variable "db" {
+  type=object({
+    db_name=string
+    password=string
+    username=string
+    endpoint=string
+  })
+}

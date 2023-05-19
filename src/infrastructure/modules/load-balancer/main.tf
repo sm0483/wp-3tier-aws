@@ -19,18 +19,6 @@ resource "aws_lb_target_group" "wordpress_tg" {
 }
 
 
-resource "aws_lb_target_group_attachment" "wordpress_tg_attachment-1" {
-  target_group_arn = aws_lb_target_group.wordpress_tg.arn
-  target_id        = var.ec2_ids.node_1_private
-  port             = 80
-}
-
-resource "aws_lb_target_group_attachment" "wordpress_tg_attachment-2" {
-  target_group_arn = aws_lb_target_group.wordpress_tg.arn
-  target_id        = var.ec2_ids.node_2_private
-  port             = 80
-}
-
 
 
 resource "aws_lb_listener" "wordpress_listener" {

@@ -1,3 +1,3 @@
-output "ec2_ids" {
-  value = local.ec2_ids
+output "auto_scaling_id" {
+  value = aws_autoscaling_group.wordpress_auto_group.id
 }

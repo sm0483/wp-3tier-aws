@@ -14,12 +14,8 @@ variable "lb_sg_id" {
 }
 
 
-variable "ec2_ids" {
-  type = object({
-    node_1_public  = string
-    node_1_private = string
-    node_2_private = string
-  })
+variable "auto_scaling_id" {
+  type = string
 }
 
 variable "vpc_id" {
