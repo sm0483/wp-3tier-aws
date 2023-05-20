@@ -71,3 +71,7 @@ module "alb_module" {
   auto_scaling_id = module.ec2_module.auto_scaling_id
 }
 
+module "cloud_watch_module" {
+  source            = "./modules/cloud-watch"
+  auto_scaling_name = module.ec2_module.auto_scaling_name
+}
