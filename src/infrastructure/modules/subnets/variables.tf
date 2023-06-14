@@ -1,11 +1,10 @@
 variable "zone_one" {
-  type    = string
-  default = "ap-south-1a"
+  type = string
 }
 
 variable "zone_two" {
-  type    = string
-  default = "ap-south-1b"
+  type = string
+
 }
 
 variable "vpc_id" {

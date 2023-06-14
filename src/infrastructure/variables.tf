@@ -1,7 +1,5 @@
 variable "region" {
-  type    = string
-  default = "ap-south-1"
-
+  type = string
 }
 
 variable "config" {
@@ -16,5 +14,15 @@ variable "credentials" {
 
 variable "my_ip" {
   description = "ip address"
+  type        = string
+}
+
+variable "zone_one" {
+  description = "region"
+  type        = string
+}
+
+variable "zone_two" {
+  description = "region"
   type        = string
 }
