@@ -38,7 +38,7 @@ This project uses several AWS services to provision the infrastructure for hosti
 The 3-tier architecture used in this project consists of a web layer, an application layer, and a database layer.
 The infrastructure is provisioned using Terraform and consists of several components, including a VPC, subnets, security groups, EC2 instances, an RDS instance, an EFS file system, and an ALB. These components are configured to work together to provide a scalable and highly available infrastructure for hosting the WordPress application.
 
-![last (1)](https://github.com/sm0483/wordpress-infra/assets/74458527/1516a515-5bfa-469a-8dc9-5cbdacce98b6)
+![img](https://github.com/sm0483/wp-3tier-aws/assets/74458527/756d9bd7-5f18-40bd-85d1-2bd19eff4f25)
 
 ## Usage
 
