@@ -1,4 +1,4 @@
-# Terraform AWS WordPress
+# Multi-Tier Cloud Infrastructure Provisioning
 
 This repository contains Terraform configurations for provisioning a 3-tier architecture on AWS to host a WordPress application.
 
